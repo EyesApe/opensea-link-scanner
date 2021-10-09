@@ -78,8 +78,8 @@ for (const file of commandFiles) {
 
 client.on("message", async (message) => {
 
-  const bannedWords = [`https`, `http`, `www.`]
-  const allowed = [`opensea.io/assets/0x76e51bc8fa0beebcf3e45de408fa43c9dc5ffb27`, `opensea.io/collection/primate-social-society-official`]
+  const bannedWords = [`opensea.io/assets/`]
+  const allowed = [`opensea.io/assets/0x76e51bc8fa0beebcf3e45de408fa43c9dc5ffb27`, `opensea.io/collection/primate-social-society-official`, `opensea.io/PSSOfficial`, `PSSOfficial`, `primate-social-society-official`, `0x76e51bc8fa0beebcf3e45de408fa43c9dc5ffb27`]
  
       if (bannedWords.some(word => message.content.toLowerCase().includes(word))) {
         if (allowed.some(word5 => message.content.toLowerCase().includes(word5))) {
@@ -90,7 +90,7 @@ client.on("message", async (message) => {
         }else{
           message.react("❌")
 
-          message.channel.send(`${message.author} that link is not part of official PSS collection`)
+          message.channel.send(`${message.author} <@850519543267983403> <@&883569801862197258> that link is not part of official PSS collection`)
         }
 
       }
